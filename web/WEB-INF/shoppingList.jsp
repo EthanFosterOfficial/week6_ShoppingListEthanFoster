@@ -28,13 +28,16 @@
         <form action="ShoppingList" method="post">
             <c:if test="${shoppingList != null}">
                 <c:forEach var="listItem" items="${shoppingList}">
+                    <ul style="list-style-type:none;">
                     <li>
                         <input type="radio" name="items" value="${listItem}">${listItem}
                     </li>
+                    </ul>
                 </c:forEach>
             </c:if>
             <input type="hidden" name="action" value="delete">
             <input type="submit" value="Delete">
         </form>
+        ${message}
     </body>
 </html>
